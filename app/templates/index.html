@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>L5x Routine Replicator</title>
+  <meta name="description" content="L5X Replicator">
+  <meta name="author" content="Dylan DuFresne">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='images/factory.svg') }}" type="image/x-icon">
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/spinner.css') }}">
+</head>
+<body>
+
+  <div class="content-wrap">
+
+    <!-- Navigation Header -->
+    <nav>
+      <div class="nav-inner">
+        <a href="{{ url_for('index') }}" class="nav-logo">
+          <img src="{{ url_for('static', filename='images/smile.svg') }}" alt="Logo">
+        </a>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Application</a></li>
+          <li><a href="{{ url_for('docs') }}">Help</a></li>
+        </ul>
+        <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero u-full-width">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <h2 class="hero-title">L5x Routine Replicator</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section - Upload L5X -->
+    <div id="Upload-L5x">
+      <div class="container section-body row">
+        <h6 class="section-header">
+          <a href="{{ url_for('docs') }}">Upload a Routine</a>
+        </h6>
+        <form id="upload-form" enctype="multipart/form-data" class="row">
+          <div class="drop-zone" id="drop-zone">
+            <span>Drag & Drop your file here or click to select</span>
+            <input type="file" id="file" name="file" accept=".l5x" required>
+            <span id="file-name" class="file-name"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Section - Program Data -->
+    <div id="Program-Data">
+      <div class="container section-body row">
+        <h6 class="section-header">
+          <a href="{{ url_for('docs') }}">Enter the Program Details</a>
+        </h6>
+        <form id="contactForm">
+          <div class="row">
+            <label for="program-name" class="twelve columns">Program Name:</label>
+            <input id="program-name" class="twelve columns" type="text" placeholder="Name" name="program-name" required>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Section - Replacement Data -->
+    <div id="Replacement-Data">
+      <div class="container section-body row">
+        <h6 class="section-header">
+          <a href="{{ url_for('docs') }}">Create the Replacement Table</a>
+        </h6>
+        <div>
+          <button id="add-column" class="two columns">+ Column</button>
+          <button id="add-row" class="two columns">+ Row</button>
+          <button id="clear-table" class="two columns">Clear</button>
+          <button id="import-csv" class="three columns">Import</button>
+          <button id="export-csv" class="three columns">Export</button>
+        </div>
+        <div id="table-container">
+          <table id="replacement-table" class="twelve columns">
+            <thead>
+              <tr id="header-row">
+                <!-- Columns will be added dynamically -->
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Rows will be added dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section - Generate Program -->
+    <div id="Generate-Program">
+      <div class="container section-body row">
+        <h6 class="section-header">
+          <a href="{{ url_for('docs') }}">Generate Your Program</a>
+        </h6>
+        <button id="modify-button" class="twelve columns">Generate</button>
+      </div>
+    </div>
+
+    <!-- Section - View L5X -->
+    <div id="View-L5x">
+      <div class="container section-body row">
+        <h6 class="section-header">
+          <a href="{{ url_for('docs') }}">View your L5x file</a>
+        </h6>
+        <button id="convert-button" class="twelve columns">View</button>
+        <div class="twelve columns">
+          <button id="expandAllBtn" class="six columns">Expand All</button>
+          <button id="collapseAllBtn" class="six columns">Collapse All</button>
+        </div>
+        <div id="json-display" class="twelve columns json-tree-view"></div>
+      </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu"></div>
+
+    <!-- Spinner -->
+    <div id="overlay">
+      <div id="spinner-container">
+        <div class="lds-ellipsis">
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-info">2024 | <a href="https://dylandufresne.info/">Dylan DuFresne</a></p>
+        <ul>
+          <li><a href="https://linkedin.com/in/dylan-dufresne-41b71287" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script type="module" src="{{ url_for('static', filename='js/domUtils.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/contextMenu.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/table.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/toast.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/fileUpload.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/treeView.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/spinner.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='js/nav.js') }}" defer></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+# Ignore Python bytecode and other unnecessary files
+__pycache__
+*.py[cod]
+*$py.class
+
+# Ignore virtual environments
+env/
+venv/
+ENV/
+.local_env/
+.local_venv/
+.local_env_win/
+
+# Ignore distribution / packaging directories
+build/
+dist/
+eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+pytestdebug.log
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore pyenv
+.python-version
+
+# Ignore celery files
+celerybeat-schedule
+celerybeat.pid
+
+# Ignore SageMath files
+*.sage.py
+
+# Ignore environment and dotenv files
+.env
+.env.*
+
+# Ignore Flask instance folder
+instance/
+
+# Ignore Flask web assets cache
+.webassets-cache
+
+# Ignore Flask log files
+*.log
+
+# Ignore documentation build output
+docs/_build/
+
+# Ignore PyInstaller files
+*.manifest
+*.spec
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore Windows specific files
+Thumbs.db
+desktop.ini
+
+# Ignore editor and IDE configuration files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore Docker specific files
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+Dockerfile.*

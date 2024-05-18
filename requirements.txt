@@ -1,0 +1,5 @@
+Flask==3.0.3
+Flask-Limiter==3.6.0
+gunicorn==22.0.0
+lxml==5.2.2
+python-dotenv==1.0.1
