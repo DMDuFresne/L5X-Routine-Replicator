@@ -23,13 +23,13 @@ Make sure you have Docker and Docker Compose installed on your system.
 Clone the repository:
 
 ```bash
-git clone https://github.com/DMDuFresne/L5x_Replicator.git
+git clone https://github.com/DMDuFresne/L5X-Routine-Replicator.git
 ```
 
 Navigate into the project directory:
 
 ```bash
-cd l5x-replicator
+cd L5X-Routine-Replicator
 ```
 
 Build and run the application using Docker Compose:
