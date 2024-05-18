@@ -116,7 +116,9 @@ You can define replacements to be applied to the uploaded L5X file using the rep
 
 ### Conclusion
 
-The L5X Routine Replicator makes it easy to modify Studio 5000 L5X files. By following this guide, you can effectively use the tool to streamline your workflow. If you have any issues or questions, refer to the [README](README.md) or visit the project’s [GitHub repository](https://github.com/DMDuFresne/L5x_Replicator) for more information.
+The L5X Routine Replicator makes it easy to modify Studio 5000 L5X files. 
+By following this guide, 
+you can effectively use the tool to streamline your workflow. 
 
 ## Acknowledgments
 
