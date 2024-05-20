@@ -10,7 +10,7 @@ The L5X Routine Replicator is a Flask application designed to work with Rockwell
 - **Rate Limiting:** Ensures that the service cannot be overwhelmed by too many requests using Flask-Limiter.
 - **Pretty Printing:** Outputs the modified XML in a neatly formatted manner for better readability.
 
-# ![Node Historian](docs/screenshot.png)
+# ![Routine Replicator](docs/Screenshot.png)
 
 ## Getting Started
 
